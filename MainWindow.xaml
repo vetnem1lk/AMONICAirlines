@@ -1,0 +1,110 @@
+﻿<Window x:Class="AMONICAirlines.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AMONICAirlines"
+        mc:Ignorable="d"
+        Height="600" 
+        Width="420"    
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="{StaticResource TGA}"
+        >
+    <Window.Resources>
+        <Style x:Key="TB" TargetType="TextBox">
+
+        </Style>
+    </Window.Resources>
+    <Border Background="#064B66"
+            CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="98"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text=""
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="18"
+                       Margin="10,0,0,0"
+                       Foreground="#F1F1F2"/>
+            <Image Name="ExitButton"
+                   Height="20"
+                   Width="20"
+                   HorizontalAlignment="Right"
+                   Margin="0,0,10,0" MouseLeftButtonDown="ExitButton_MouseLeftButtonDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="Images/cross.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=ExitButton}"
+                                         Value="true">
+                                <Setter Property="Source" Value="Images/active_cross.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <Image HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Source="Images/main.png"
+                   Margin="0,3,0,3"
+                   Grid.Row="1"/>
+            <StackPanel Grid.Row="2"
+                        Margin="0,10,0,10">
+                <TextBlock Text="Email"
+                           FontSize="14"
+                           Margin="10,50,0,0"
+                           Foreground="#F1F1F2"/>
+                <TextBox x:Name="loginBox"
+                    Grid.Row="2"
+                     VerticalAlignment="Center"
+                     FontSize="18"
+                         Margin="10,0,10,0"
+                         Foreground="#0d4f4c" TextChanged="loginBox_TextChanged"
+                     />
+                <TextBlock Text="Password"
+                           FontSize="15"
+                           Margin="10,10,0,0"
+                           Foreground="#F1F1F2"/>
+                <PasswordBox Grid.Row="2"
+                     VerticalAlignment="Center"
+                     FontSize="18"
+                         Margin="10,0,10,0"
+                         Foreground="#0d4f4c"
+                         x:Name="passBox"
+                         PasswordChar="*"
+                     />
+                <TextBlock Name="errorText"
+                       Margin="10,20,10,0"
+                       FontSize="12"
+                       Foreground="IndianRed"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                           
+                           />
+                <Button x:Name="LoginButton"
+                        Style="{StaticResource OrangeButton}"
+                        HorizontalAlignment="Center"
+                        Margin="0,20,0,0"
+                        Height="30"
+                        Width="75"
+                        Content="Login" 
+                        FontFamily="{StaticResource TGA}"
+                        Click="LoginButton_Click"/>
+                
+            </StackPanel>
+
+
+
+
+
+        </Grid>
+    </Border>
+</Window>

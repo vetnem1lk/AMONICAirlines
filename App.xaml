@@ -1,0 +1,18 @@
+﻿<Application x:Class="AMONICAirlines.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AMONICAirlines"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <FontFamily x:Key="TGA">./Fonts/TeXGyreAdventor-Regular.ttf#TeX Gyre Adventor</FontFamily>
+            <FontFamily x:Key="TGAI">./Fonts/TeXGyreAdventor-Italic.ttf#TeX Gyre Adventor</FontFamily>
+            <FontFamily x:Key="TGAB">./Fonts/TeXGyreAdventor-Bold.ttf#TeX Gyre Adventor</FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
